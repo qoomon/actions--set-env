@@ -21,6 +21,19 @@ jobs:
           echo "$MAGIC_NUMBER"
 ```
 
+### Alternative without an extra action
+```yaml
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    env:
+      MAGIC_NUMBER: ${{ vars[format('MAGIC_NUMBER__{0}', inputs.env )] }}
+    steps:
+      - run: |
+          echo "$MAGIC_NUMBER"
+```
+
+
 #### Release New Action Version
 - Trigger the [Release workflow](../../actions/workflows/release.yaml)
   - The workflow will create a new release with the given version and also move the related major version tag e.g. `v1` to point to this new release

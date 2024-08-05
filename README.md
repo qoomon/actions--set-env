@@ -21,7 +21,7 @@ jobs:
           echo "$MAGIC_NUMBER"
 ```
 
-### Alternative without an extra action
+### Alternative without this Action
 ```yaml
 jobs:
   example:

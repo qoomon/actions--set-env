@@ -1,0 +1,22 @@
+name: Example Action
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./
+        with:
+          vars: ${{ toJson(vars) }}
+          scope: TEST
+          export: |
+            MAGIC_NUMBER
+      - run: |
+          echo The magic number is ${MAGIC_NUMBER}
+
+

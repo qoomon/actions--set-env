@@ -1,23 +1,20 @@
-name: 'CHANGE ME'
-description: 'CHANGE ME'
-author: 'CHANGE ME'
+name: 'Set Env'
+description: 'Set environment variables'
+author: 'qoomon'
 branding:
   icon: box
   color: blue
 
 inputs:
-  token:
-    description: 'A GitHub access token'
+  vars:
+    description: 'GitHub vars as json e.g. $ {{ toJson(vars) }}'
+  secrets:
+    description: 'GitHub secrets as json e.g. $ {{ toJson(secrets) }}'
+  scope:
+    description: 'Variable scope e.g. PROD'
+  export:
+    description: 'Variables to export as comma and/or new line separated list'
     required: true
-    default: '${{ github.token }}'
-  stringInput:
-    description: 'An arbitrary string'
-  yamlInput:
-    description: 'An arbitrary yaml object'
-
-outputs:
-  stringOutput:
-    description: 'An arbitrary string'
 
 runs:
   using: 'node20'

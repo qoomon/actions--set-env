@@ -1,6 +1,8 @@
 # Set Env &nbsp; [![Actions](https://img.shields.io/badge/qoomon-GitHub%20Actions-blue)](https://github.com/qoomon/actions)
 
-This action exports given variables based on `vars` and `secrets` context values.
+This action exports given variables based on `vars` and `secrets` context values. 
+
+It automtically replace unsupported variable characters of the action input `export` value with `_` characters.
 
 ### Usage
 ```yaml

@@ -16,7 +16,9 @@ export const action = () => run(async () => {
         // trim whitespace
         .map((name) => name.trim())
         // remove empty strings
-        .filter((name) => name !== ''),
+        .filter((name) => name !== '')
+        // replace unsupported GitHub variable name characters with underscores
+        .map((name) => name.replace(/[^a-zA-Z0-9_]/g, '_')),
   }
 
   core.setOutput('scope', inputs.scope)

@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import * as core from '@actions/core'
 import {getInput} from '@actions/core'
 import {run} from './lib/actions.js'

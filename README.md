@@ -10,7 +10,7 @@ jobs:
   example:
     runs-on: ubuntu-latest
     steps:
-      - uses: qoomon/sandbox/actions/set-env@main
+      - uses: qoomon/actions--set-env@v1
         with:
           vars: ${{ toJson(vars) }}
           # optional - prefer scoped variables over unscoped ones e.g.,
